@@ -1,5 +1,5 @@
 //! moment.js locale configuration
-//! locale : Kurdish [ku]
+//! locale : Kurdish (Central Kurdish) [ku-ckb] 
 //! author : Shahram Mebashar : https://github.com/ShahramMebashar
 
 ;(function (global, factory) {
