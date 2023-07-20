@@ -12,32 +12,32 @@
     //! moment.js locale configuration
 
     var monthsStrictRegex =
-            /^(janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i,
+            /^(çile|sibat|adar|nîsan|gulan|hezîran|tîrmeh|tebax|îlon|cotmeh|mijdar|kanûn)/i,
         monthsShortStrictRegex =
-            /(janv\.?|févr\.?|mars|avr\.?|mai|juin|juil\.?|août|sept\.?|oct\.?|nov\.?|déc\.?)/i,
+            /(çile|sib\.?|adar|nîs\.?|gul\.?|hez\.?|tîr\.?|teb\.?|îlon|cot\.?|mij\.?|kan\.?)/i,
         monthsRegex =
-            /(janv\.?|févr\.?|mars|avr\.?|mai|juin|juil\.?|août|sept\.?|oct\.?|nov\.?|déc\.?|janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre)/i,
+            /(çile|sib\.?|adar|nîs\.?|gul\.?|hez\.?|tîr\.?|teb\.?|îlon|cot\.?|mij\.?|kan\.?|çile|sibat|adar|nîsan|gulan|hezîran|tîrmeh|tebax|îlon|cotmeh|mijdar|kanûn)/i,
         monthsParse = [
-            /^janv/i,
-            /^févr/i,
-            /^mars/i,
-            /^avr/i,
-            /^mai/i,
-            /^juin/i,
-            /^juil/i,
-            /^août/i,
-            /^sept/i,
-            /^oct/i,
-            /^nov/i,
-            /^déc/i,
+            /^çile/i,
+            /^sib/i,
+            /^adar/i,
+            /^nîs/i,
+            /^gul/i,
+            /^hez/i,
+            /^tîr/i,
+            /^teb/i,
+            /^îlon/i,
+            /^cot/i,
+            /^mij/i,
+            /^kan/i,
         ];
 
     var fr = moment.defineLocale('fr', {
-        months: 'janvier_février_mars_avril_mai_juin_juillet_août_septembre_octobre_novembre_décembre'.split(
+        months: 'çile_sibat_adar_nîsan_gulan_heziran_tîrmeh_tebax_îlon_cotmeh_mijdar_kanûn'.split(
             '_'
         ),
         monthsShort:
-            'janv._févr._mars_avr._mai_juin_juil._août_sept._oct._nov._déc.'.split(
+            'çile_sib._adar_nîs._gul._hez._tîr._teb._îlon_cot._mij._kan.'.split(
                 '_'
             ),
         monthsRegex: monthsRegex,
@@ -47,9 +47,9 @@
         monthsParse: monthsParse,
         longMonthsParse: monthsParse,
         shortMonthsParse: monthsParse,
-        weekdays: 'dimanche_lundi_mardi_mercredi_jeudi_vendredi_samedi'.split('_'),
-        weekdaysShort: 'dim._lun._mar._mer._jeu._ven._sam.'.split('_'),
-        weekdaysMin: 'di_lu_ma_me_je_ve_sa'.split('_'),
+        weekdays: 'yekşem_duşem_sêşem_çarşem_pêncşem_înî_şemî'.split('_'),
+        weekdaysShort: 'yek._du._sê._çar._pên._înî_şemî'.split('_'),
+        weekdaysMin: 'ye_du_sê_ça_pê_în_şe'.split('_'),
         weekdaysParseExact: true,
         longDateFormat: {
             LT: 'HH:mm',
@@ -60,30 +60,30 @@
             LLLL: 'dddd D MMMM YYYY HH:mm',
         },
         calendar: {
-            sameDay: '[Aujourd’hui à] LT',
-            nextDay: '[Demain à] LT',
-            nextWeek: 'dddd [à] LT',
-            lastDay: '[Hier à] LT',
-            lastWeek: 'dddd [dernier à] LT',
+            sameDay: '[îro li saet] LT',
+            nextDay: '[Sibê li saet] LT',
+            nextWeek: 'dddd [li saet] LT',
+            lastDay: '[Duh li saet] LT',
+            lastWeek: 'dddd [borî li saet] LT',
             sameElse: 'L',
         },
         relativeTime: {
-            future: 'dans %s',
-            past: 'il y a %s',
-            s: 'quelques secondes',
-            ss: '%d secondes',
-            m: 'une minute',
-            mm: '%d minutes',
-            h: 'une heure',
-            hh: '%d heures',
-            d: 'un jour',
-            dd: '%d jours',
-            w: 'une semaine',
-            ww: '%d semaines',
-            M: 'un mois',
-            MM: '%d mois',
-            y: 'un an',
-            yy: '%d ans',
+            future: 'di %s çirke de',
+            past: '%s çirke berê',
+            s: 'çend çirkan',
+            ss: '%d çirkan',
+            m: 'deqek',
+            mm: '%d deqan',
+            h: 'saetek',
+            hh: '%d saetan',
+            d: 'rojek',
+            dd: '%d rojan',
+            w: 'heftek',
+            ww: '%d heftên',
+            M: 'mehek',
+            MM: '%d mehan',
+            y: 'salek',
+            yy: '%d salan',
         },
         dayOfMonthOrdinalParse: /\d{1,2}(er|)/,
         ordinal: function (number, period) {
@@ -94,7 +94,7 @@
                 case 'D':
                     return number + (number === 1 ? 'er' : '');
 
-                // Words with masculine grammatical gender: mois, trimestre, jour
+                // Words with masculine grammatical gender: meh, sêmehî, roj
                 default:
                 case 'M':
                 case 'Q':
@@ -109,7 +109,7 @@
             }
         },
         week: {
-            dow: 1, // Monday is the first day of the week.
+            dow: 1, // Sunday is the first day of the week.
             doy: 4, // The week that contains Jan 4th is the first week of the year.
         },
     });
